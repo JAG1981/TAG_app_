@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+    <head>
+		<link rel ="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}"
+    </head>
+    <body>
+	    <h1> {{ message }} </h1>
+        <h1> {{ message2 }} </h1>
+    </body>
+    <table>
+    <tr>
+        <th>Probable tags</th>
+        <th>Possible tags</th>
+    </tr>
+
+    {% for row in range(10) %}
+        <tr>
+            <td> {{ supervised_tags[row] }} </td>
+            <td> {{ unsupervised_tags[row] }} </td>
+        </tr>
+    {% endfor %}
+</table>
+
+
+
+</html>

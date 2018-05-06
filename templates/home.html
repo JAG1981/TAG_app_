@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+  <head>
+			<link rel ="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+		</head>
+
+<body>
+    <h1>Ask your technical question in English and you will be proposed 20 possible tags to attach to your question.</h1>
+    <form action="." method="POST">
+        <input type="text" name="text">
+        <button type="submit">OK</button>
+    </form>
+</body>
+</html>
