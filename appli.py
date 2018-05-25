@@ -1,7 +1,6 @@
 from flask import Flask
 from flask import request
 from flask import render_template
-import pandas as pd
 import nltk
 from fonction_ import *
 from sklearn.feature_extraction.text import TfidfVectorizer

@@ -1,6 +1,4 @@
 import numpy as np
-import random
-import pandas as pd
 import warnings
 import nltk
 from nltk import word_tokenize
