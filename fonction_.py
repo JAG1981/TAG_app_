@@ -14,8 +14,8 @@ from sklearn.externals import joblib
 from sklearn.feature_extraction import stop_words
 
 
-def recommander_f(q, alltags, TfidfVec_, SVC_prob, NMF):
-
+def recommander_f(q, alltags, TfidfVec_, NMF):#,SVC_prob)
+    SVC_prob = joblib.load('svc_3.pkl')
     warnings.filterwarnings('ignore')
     tag_nb = 10
 

@@ -12,7 +12,9 @@ from sklearn.decomposition import NMF
 #    wt = word_tokenize(x)
 #    return wt
 
-SVC_ = joblib.load('svc_3.pkl')
+
+
+#SVC_ = joblib.load('svc_3.pkl')
 TfidfVec = joblib.load('vectorizer3.pkl')
 features = np.array(TfidfVec.get_feature_names())  #feature_array
 print('features shape',features.shape)
@@ -33,7 +35,7 @@ def text_box():
     question = request.form['text']
     print("question is" , question)
 
-    all_data = recommander_f(question,all_tags, TfidfVec, SVC_, NMF_)
+    all_data = recommander_f(question,all_tags, TfidfVec,NMF_)#, SVC_, NMF_)
     print(all_data)
 
     if (len(all_data) == 0):
