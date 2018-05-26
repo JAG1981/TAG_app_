@@ -1,15 +1,16 @@
 from flask import Flask
 from flask import request
 from flask import render_template
-import nltk
+
 from fonction_ import *
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.decomposition import NMF
-from nltk import word_tokenize
+#import nltk
+#from nltk import word_tokenize
 
-def tokenize_tags(x):
-    wt = word_tokenize(x)
-    return wt
+#def tokenize_tags(x):
+#    wt = word_tokenize(x)
+#    return wt
 
 SVC_ = joblib.load('svc_3.pkl')
 TfidfVec = joblib.load('vectorizer3.pkl')

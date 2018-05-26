@@ -1,8 +1,8 @@
 import numpy as np
 import warnings
-import nltk
-from nltk import word_tokenize
-from nltk.corpus import stopwords
+#import nltk
+#from nltk import word_tokenize
+#from nltk.corpus import stopwords
 import sklearn
 # for feature extraction
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -22,7 +22,14 @@ def recommander_f(q, alltags, TfidfVec_, SVC_prob, NMF):
     question = q
     all_tags = alltags
     features = np.array(TfidfVec_.get_feature_names())
-    tok_question = word_tokenize(question.lower())
+    #tok_question = word_tokenize(question.lower())
+    vectorizer = TfidfVectorizer(ngram_range=(1, 1))
+    to = []
+    to.append(question.lower())
+    tokenized = vectorizer.fit_transform(to)
+    # vectorizer.build_tokenizer()
+    result = vectorizer.inverse_transform(tokenized)
+    tok_question = list(result[0])
     retained_words = ''
     for w in tok_question:
         if (w in features):
