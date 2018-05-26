@@ -12,10 +12,20 @@ from sklearn.svm import LinearSVC
 from sklearn.svm import SVC
 from sklearn.externals import joblib
 from sklearn.feature_extraction import stop_words
+import _pickle as cPickle
 
 
 def recommander_f(q, alltags, TfidfVec_, NMF):#,SVC_prob)
-    SVC_prob = joblib.load('svc_3.pkl')
+    #start = time.time()
+    #SVC_prob = joblib.load('svc_3.pkl')
+    #SVC_prob = joblib.load('svc_3.pkl')
+
+    with open('svc_4.pickle', 'rb') as f:
+        # The protocol version used is detected automatically, so we do not
+        # have to specify it.
+        SVC_prob = cPickle.load(f)
+
+    #print("loading pickle time was",(time.time()-start))
     warnings.filterwarnings('ignore')
     tag_nb = 10
 
